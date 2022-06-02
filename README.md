@@ -3,5 +3,5 @@ Aplicación web empleando un modelo de negocio B2C (business to consumer) para u
 ### Participantes del proyecto 
 -Arait Monter Corona  
 -Kevin Alejandro Perez Lugo   
--Cesar Zetina Carrasco  
+
  
