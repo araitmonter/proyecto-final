@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+	<!-- Iconos -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	<link rel="stylesheet" href="assets/css/dashboard.css">
+	 <!-- Required meta tags -->
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	 <!-- Bootstrap CSS -->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	 <!-- CSS -->
+ <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+ <!-- Default theme -->
+ <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	 <title>CRUD Pacientes</title>
+	 <style>
+		 body{
+			 background-color: #f7f6f6;
+		 }
+		 table thead{
+			 background-color: #0a4f70;
+			 color: white;
+		 }
+	 </style>
+
+</head>
+<body>
+
+
+	
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">NombreClínica</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href="dashboard.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+            <li class="active">
+				<a href="pacientes.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Pacientes</span>
+				</a>
+			</li>
+			<li>
+				<a href="citas.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Citas</span>
+				</a>
+			</li>
+		
+		</ul>
+		<ul class="side-menu">
+		
+			<li>
+				<a href="index.html" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Cerrar sesión</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	
+
+
+
+	<section id="content">
+	
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="#">
+				<div class="form-input">
+					
+					<button><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			
+			
+		</nav>
+		<!--CRUD de Pacientes-->
+		<main>
+			<div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">        
+				<button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modalArticulo">Crear</button>
+				<table id="tablaArticulos" class="table mt-2 table-bordered table-striped">
+					<thead>
+						<tr class="text-center">
+							<th>ID</th>
+							<th>Nombre Paciente</th>
+							<th>Edad</th>
+							<th>Peso</th>
+							<th>Altura</th>
+							<th>Enfermedades</th>
+							<th>TipoSangre</th>
+							<th>Temperatura</th>
+							<th>Ultima cita</th>
+							<th>Proxima cita</th>
+							
+						</tr>
+					</thead>
+					<tbody>                
+					</tbody>
+				</table>
+			</div>
+		
+		<div id="modalArticulo" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header bg-primary text-white">
+				<h5 class="modal-title" id="exampleModalLabel">Pacientes</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				<form>
+				  <div class="mb-3">
+					<label for="descripcion" class="col-form-label">ID</label>
+					<input id="descripcion" type="number" class="form-control">
+				  </div>
+				  <div class="mb-3">
+					<label for="name" class="col-form-label">Nombre completo</label>
+					<input id="name" type="text" class="form-control">
+				  </div>
+				  <div class="mb-3">
+					<label for="edad" class="col-form-label">Edad</label>
+					<input id="edad" type="number" class="form-control">
+				  </div>   
+				  <div class="mb-3">
+					<label for="peso" class="col-form-label">Peso</label>
+					<input id="peso" type="number" class="form-control">
+				  </div>    
+				  <div class="mb-3">
+					<label for="altura" class="col-form-label">Altura</label>
+					<input id="altura" type="number" class="form-control">
+				  </div>    
+				  <div class="mb-3">
+					<label for="enf" class="col-form-label">Enfermedades</label>
+					<input id="enf" type="radio" class="form-control">
+				  </div>       
+				  <div class="mb-3">
+					<label for="sangre" class="col-form-label">Tipo de Sangre</label>
+					<input id="sangre" type="text" class="form-control">
+				  </div>    
+				  <div class="mb-3">
+					<label for="temp" class="col-form-label">Temperatura</label>
+					<input id="temp" type="number" class="form-control">
+				  </div>    
+				  <div class="mb-3">
+					<label for="ucita" class="col-form-label">Ultima Cita</label>
+					<input id="ucita" type="datetime" class="form-control">
+				  </div>    
+				  <div class="mb-3">
+					<label for="pcita" class="col-form-label">proximaCita</label>
+					<input id="pcita" type="datetime" class="form-control">
+				  </div>    
+
+
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Guardar</button>
+			  </div>
+			</form>
+			</div>
+		  </div>
+		</div>
+		
+		
+			
+		
+		
+
+			
+
+			
+			
+		</main>
+	
+	</section>
+	
+	
+
+	<script src="assets/js/dashboard.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<script src="code.js"></script>">
+
+</body>
